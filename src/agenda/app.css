@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: #f3f4f6;
+    color: #1f2937;
+}
+
+.agenda {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+}
+
+.agenda-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 24px;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .agenda-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.agenda-calendar {
+    padding: 16px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.agenda-calendar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.agenda-calendar-nav input {
+    padding: 6px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font: inherit;
+}
+
+.agenda-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 4px;
+}
+
+.agenda-calendar-weekday {
+    padding: 4px 0;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #6b7280;
+}
+
+.agenda-calendar-day {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-height: 84px;
+    padding: 4px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+}
+
+.agenda-calendar-day.empty {
+    background: transparent;
+    border-color: transparent;
+}
+
+.agenda-calendar-day.today {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.agenda-calendar-number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #374151;
+}
+
+.agenda-calendar-event {
+    padding: 1px 4px;
+    background: #2563eb;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.agenda-header h1 {
+    margin: 0;
+    color: #1d4ed8;
+}
+
+.agenda-header p {
+    margin: 4px 0 20px;
+    color: #6b7280;
+}
+
+.agenda-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.agenda-form h2 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.agenda-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.agenda-form input,
+.agenda-form textarea {
+    padding: 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font: inherit;
+    font-weight: 400;
+}
+
+.agenda-form-row,
+.agenda-form-actions {
+    display: flex;
+    gap: 12px;
+}
+
+button {
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 4px;
+    background: #2563eb;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+}
+
+button.secondary {
+    background: #e5e7eb;
+    color: #1f2937;
+}
+
+button.danger {
+    background: #dc2626;
+}
+
+.agenda-error {
+    margin: 12px 0 0;
+    padding: 8px 12px;
+    background: #fee2e2;
+    color: #991b1b;
+    border-radius: 4px;
+}
+
+.agenda-empty {
+    margin-top: 24px;
+    text-align: center;
+    color: #6b7280;
+}
+
+.agenda-day h3 {
+    margin: 24px 0 8px;
+    font-size: 0.95rem;
+    text-transform: capitalize;
+    color: #374151;
+}
+
+.agenda-day ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.agenda-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 8px;
+    padding: 12px;
+    background: #fff;
+    border-left: 4px solid #2563eb;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.agenda-item-hora {
+    min-width: 48px;
+    font-weight: 700;
+    color: #1d4ed8;
+}
+
+.agenda-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.agenda-item-info p {
+    margin: 4px 0 0;
+    color: #6b7280;
+    font-size: 0.875rem;
+    overflow-wrap: anywhere;
+}
+
+.agenda-item-actions {
+    display: flex;
+    gap: 6px;
+}
